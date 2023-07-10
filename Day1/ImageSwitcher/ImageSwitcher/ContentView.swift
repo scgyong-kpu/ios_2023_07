@@ -11,9 +11,21 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Image(systemName: "arrow.up.bin")
-                .imageScale(.large)
+                .resizable()
+                .frame(maxWidth:.infinity)
                 .foregroundColor(.accentColor)
             Text("Hello, world!")
+                .font(.largeTitle)
+                .padding()
+                .foregroundColor(Color.blue)
+                .background(Color.yellow)
+                .padding()
+                .border(Color.black)
+            HStack {
+                Image(systemName: "pencil.circle.fill")
+                Text("Pencil")
+            }
+            
         }
         .padding()
     }

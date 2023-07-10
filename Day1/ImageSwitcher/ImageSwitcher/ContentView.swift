@@ -18,6 +18,7 @@ struct ContentView: View {
                 } label: {
                     Image(systemName: "arrow.left.circle.fill")
                 }
+                .disabled(page == 1)
 
                 Text("\(page) / 5")
                     .frame(maxWidth: .infinity)
@@ -27,6 +28,7 @@ struct ContentView: View {
                 } label: {
                     Image(systemName: "arrow.right.circle.fill")
                 }
+                .disabled(page == 5)
             }
             .font(.largeTitle)
             Image("cat\(page)")

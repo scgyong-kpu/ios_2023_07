@@ -14,9 +14,14 @@ struct ContentView: View {
                 .resizable()
                 .frame(maxWidth:.infinity)
                 .foregroundColor(.accentColor)
+                .background(
+                    Capsule()
+                        .foregroundColor(Color.yellow)
+                )
             RoundedRectangle(cornerRadius: 50, style: .continuous)
                 .stroke()
             Capsule()
+            Color.red
             Text("Hello, world!")
                 .font(.largeTitle)
                 .padding()

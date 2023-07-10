@@ -17,3 +17,8 @@ let n2 = names.sorted()
 var greeting = "Hello, playgrjiljefjlfewjound"
 print(greeting)
 
+var arr = [String]()
+var i = Int()
+
+//int a = 1'000'000;
+

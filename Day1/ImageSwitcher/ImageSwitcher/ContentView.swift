@@ -10,30 +10,16 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "arrow.up.bin")
-                .resizable()
-                .frame(maxWidth:.infinity)
-                .foregroundColor(.accentColor)
-                .background(
-                    Capsule()
-                        .foregroundColor(Color.yellow)
-                )
-            RoundedRectangle(cornerRadius: 50, style: .continuous)
-                .stroke()
-            Capsule()
-            Color.red
-            Text("Hello, world!")
-                .font(.largeTitle)
-                .padding()
-                .foregroundColor(Color.blue)
-                .background(Color.yellow)
-                .padding()
-                .border(Color.black)
             HStack {
-                Image(systemName: "pencil.circle.fill")
-                Text("Pencil")
+                Image(systemName: "arrow.left.circle.fill")
+                Text("1 / 5")
+                    .frame(maxWidth: .infinity)
+                Image(systemName: "arrow.right.circle.fill")
             }
-            
+            .font(.largeTitle)
+            Image("cat1")
+                .resizable()
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
         .padding()
     }

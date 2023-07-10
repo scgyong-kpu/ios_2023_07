@@ -8,16 +8,28 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var page = 1
     var body: some View {
         VStack {
             HStack {
-                Image(systemName: "arrow.left.circle.fill")
-                Text("1 / 5")
+                Button {
+//                    print("Left clicked")
+                    page -= 1
+                } label: {
+                    Image(systemName: "arrow.left.circle.fill")
+                }
+
+                Text("\(page) / 5")
                     .frame(maxWidth: .infinity)
-                Image(systemName: "arrow.right.circle.fill")
+                Button {
+                    page += 1
+//                    print("Right clicked")
+                } label: {
+                    Image(systemName: "arrow.right.circle.fill")
+                }
             }
             .font(.largeTitle)
-            Image("cat1")
+            Image("cat\(page)")
                 .resizable()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
         }

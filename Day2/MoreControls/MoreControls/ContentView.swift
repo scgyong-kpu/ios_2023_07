@@ -20,6 +20,7 @@ struct ContentView: View {
                 ForEach(names, id: \.self) { row in
                     NavigationLink {
                         Text(row)
+                            .navigationTitle("\(row) detail")
                     } label: {
                         HStack {
                             Image(systemName: "pencil.tip.crop.circle.badge.arrow.forward")
@@ -28,6 +29,7 @@ struct ContentView: View {
                     }
                 }
             }
+            .navigationTitle("Worlds")
         }
         .background(
             LinearGradient(colors: [

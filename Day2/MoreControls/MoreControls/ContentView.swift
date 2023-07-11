@@ -20,7 +20,12 @@ struct ContentView: View {
                 .foregroundColor(.yellow)
                 .shadow(color: .red, radius: 10, x: 10, y: 10)
         }
-        .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(
+            LinearGradient(colors: [
+                .white, .cyan, .red
+            ], startPoint: .topLeading, endPoint: .bottomTrailing)
+        )
     }
 }
 

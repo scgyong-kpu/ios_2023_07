@@ -10,13 +10,12 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         List {
-            Section(Region.all[0].title) {
-                Text(Region.all[0].countries[0].name)
-                Text(Region.all[0].countries[1].name)
-            }
-            Section(Region.all[1].title) {
-                Text(Region.all[1].countries[0].name)
-                Text(Region.all[1].countries[1].name)
+            ForEach(Region.all, id: \.title) { region in
+                Section(region.title) {
+                    ForEach(region.countries, id: \.name) { country in
+                        Text(country.name)
+                    }
+                }
             }
         }
         .padding()

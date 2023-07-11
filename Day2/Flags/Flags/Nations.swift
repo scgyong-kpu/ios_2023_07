@@ -20,6 +20,12 @@ struct Region {
         Region(title: "Asia", countries: [
             Country(name: "Korea", file: "korea.png"),
             Country(name: "Japan", file: "japan.png"),
+            Country(name: "China", file: "japan.png"),
+        ]),
+        Region(title: "Asia2", countries: [
+            Country(name: "Korea", file: "korea.png"),
+            Country(name: "Japan", file: "japan.png"),
+            Country(name: "China", file: "japan.png"),
         ]),
         Region(title: "Europe", countries: [
             Country(name: "England", file: "korea.png"),

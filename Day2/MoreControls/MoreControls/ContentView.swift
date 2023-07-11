@@ -21,6 +21,7 @@ struct ContentView: View {
                 .aspectRatio(1.0, contentMode: .fit)
                 //.frame(width: large ? 200 : 100, height: 200)
                 .scaleEffect(large ? 1.0 : 0.5)
+                .animation(.linear(duration: 0.3), value: large ? 1.0 : 0.5)
                 .foregroundColor(.yellow)
                 .rotationEffect(.degrees(rotDegrees * 360))
                 .shadow(color: .red, radius: 10, x: 10, y: 10)

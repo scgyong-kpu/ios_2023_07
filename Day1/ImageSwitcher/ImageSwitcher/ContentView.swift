@@ -12,12 +12,19 @@ struct ContentView: View {
     var body: some View {
         VStack {
             HStack {
+//                Button(action:{
+//
+//                }, label: {
+//
+//                })
                 Button {
-//                    print("Left clicked")
                     page -= 1
                 } label: {
                     Image(systemName: "arrow.left.circle.fill")
                 }
+                .background(Color.yellow)
+                .padding()
+                .background(Color.blue)
                 .disabled(page == 1)
 
                 Text("\(page) / 5")
@@ -28,6 +35,10 @@ struct ContentView: View {
                 } label: {
                     Image(systemName: "arrow.right.circle.fill")
                 }
+                .background(Color.yellow)
+                .padding()
+                .background(Color.blue)
+                .disabled(page == 1)
                 .disabled(page == 5)
             }
             .font(.largeTitle)

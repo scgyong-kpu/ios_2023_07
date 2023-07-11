@@ -8,21 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    var names = [
+        "hello", "world", "worl431","w3443orld1","4343world1","world43341",
+        "worlfs3wd1","wogsewrld1","world1","worlfdsd1","worfsdld1","wo34435rld1",
+        "wor234453ld1","worgsdgld1","worlgsdgd1","worlgsgsd1","worfsfs433ld1","w443orld1",
+    ]
+
     @State var rotDegrees = 0.0
     @State var large = false
     var body: some View {
         VStack {
             List {
-                Text("Hello")
-                Text("World")
-                Text("Hello")
-                Text("World")
-                Text("Hello")
-                Text("World")
-                Text("Hello")
-                Text("World")
-                Text("Hello")
-                Text("World")
+                ForEach(names, id: \.self) { row in
+                    HStack {
+                        Image(systemName: "pencil.tip.crop.circle.badge.arrow.forward")
+                        Text(row)
+                    }
+                }
             }
             Image(systemName: "arrow.right.circle")
                 .resizable()

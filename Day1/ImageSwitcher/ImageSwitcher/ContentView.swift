@@ -39,8 +39,9 @@ struct ContentView: View {
                 TopButton(isLeft: true, enabled: page > 1) {
                     page -= 1
                 }
+                Spacer()
                 Text("\(page) / 5")
-                    .frame(maxWidth: .infinity)
+                Spacer()
                 TopButton(isLeft: false, enabled: page < 5) {
                     page += 1
                 }

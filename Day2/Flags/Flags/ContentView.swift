@@ -15,7 +15,14 @@ struct ContentView: View {
                     ForEach(region.countries, id: \.name) { country in
                         HStack {
                             Image(country.file)
-                            Text(country.name)
+                            VStack {
+                                Text(country.name)
+                                    .font(.title)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                Text("\(country.name.count) million people")
+                                    .foregroundColor(.gray)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                            }
                         }
                     }
                 }

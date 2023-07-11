@@ -19,7 +19,7 @@ struct ContentView: View {
             List {
                 ForEach(names, id: \.self) { row in
                     NavigationLink {
-                        DetailView()
+                        DetailView(item: row)
                     } label: {
                         HStack {
                             Image(systemName: "pencil.tip.crop.circle.badge.arrow.forward")

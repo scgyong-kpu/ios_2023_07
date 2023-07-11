@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DetailView: View {
+    var item: String
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -17,11 +18,12 @@ struct DetailView: View {
             Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
                 .font(.largeTitle)
         }
+        .navigationTitle(item)
     }
 }
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView()
+        DetailView(item: "Test")
     }
 }

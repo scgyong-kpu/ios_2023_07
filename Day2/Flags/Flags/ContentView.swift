@@ -10,29 +10,13 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         List {
-            Section("Group1") {
-                Text("Korea")
-                Text("Japan")
-                Text("Korea")
-                Text("Japan")
-                Text("Korea")
-                Text("Japan")
-                Text("Korea")
-                Text("Japan")
-                Text("Korea")
-                Text("Japan")
+            Section(Region.all[0].title) {
+                Text(Region.all[0].countries[0].name)
+                Text(Region.all[0].countries[1].name)
             }
-            Section("Group2") {
-                Text("China")
-                Text("USA")
-                Text("China")
-                Text("USA")
-                Text("China")
-                Text("USA")
-                Text("China")
-                Text("USA")
-                Text("China")
-                Text("USA")
+            Section(Region.all[1].title) {
+                Text(Region.all[1].countries[0].name)
+                Text(Region.all[1].countries[1].name)
             }
         }
         .padding()

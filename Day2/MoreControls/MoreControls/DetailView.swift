@@ -15,7 +15,7 @@ struct DetailView: View {
                 .resizable()
                 .frame(width: 100, height: 100)
             
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            Text("Hello, \(item)!")
                 .font(.largeTitle)
         }
         .navigationTitle(item)

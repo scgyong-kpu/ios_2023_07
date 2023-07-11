@@ -9,11 +9,31 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        List {
+            Section("Group1") {
+                Text("Korea")
+                Text("Japan")
+                Text("Korea")
+                Text("Japan")
+                Text("Korea")
+                Text("Japan")
+                Text("Korea")
+                Text("Japan")
+                Text("Korea")
+                Text("Japan")
+            }
+            Section("Group2") {
+                Text("China")
+                Text("USA")
+                Text("China")
+                Text("USA")
+                Text("China")
+                Text("USA")
+                Text("China")
+                Text("USA")
+                Text("China")
+                Text("USA")
+            }
         }
         .padding()
     }

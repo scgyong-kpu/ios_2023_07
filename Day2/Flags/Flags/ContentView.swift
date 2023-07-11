@@ -15,8 +15,7 @@ struct ContentView: View {
                     Section(region.title) {
                         ForEach(region.countries, id: \.name) { country in
                             NavigationLink {
-                                Image(country.file)
-                                    .resizable()
+                                CountryDetailView(country: country)
                             } label: {
                                 CountryItemView(country: country)
                             }

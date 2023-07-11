@@ -14,10 +14,7 @@ struct ContentView: View {
         "wor234453ld1","worgsdgld1","worlgsdgd1","worlgsgsd1","worfsfs433ld1","w443orld1",
     ]
 
-    @State var rotDegrees = 0.0
-    @State var large = false
     var body: some View {
-        VStack {
             List {
                 ForEach(names, id: \.self) { row in
                     HStack {
@@ -26,22 +23,6 @@ struct ContentView: View {
                     }
                 }
             }
-            Image(systemName: "arrow.right.circle")
-                .resizable()
-                .aspectRatio(1.0, contentMode: .fit)
-                //.frame(width: large ? 200 : 100, height: 200)
-                .scaleEffect(large ? 1.0 : 0.5)
-                .animation(.linear(duration: 0.3), value: large ? 1.0 : 0.5)
-                .foregroundColor(.yellow)
-                .rotationEffect(.degrees(rotDegrees * 360))
-                .shadow(color: .red, radius: 10, x: 10, y: 10)
-            Slider(value: $rotDegrees)
-                .frame(width: 200)
-            Toggle(isOn: $large) {
-                Text("Shows Large Circle")
-            }
-            .padding()
-        }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(
             LinearGradient(colors: [

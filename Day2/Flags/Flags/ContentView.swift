@@ -13,7 +13,10 @@ struct ContentView: View {
             ForEach(Region.all, id: \.title) { region in
                 Section(region.title) {
                     ForEach(region.countries, id: \.name) { country in
-                        Text(country.name)
+                        HStack {
+                            Image(country.file)
+                            Text(country.name)
+                        }
                     }
                 }
             }

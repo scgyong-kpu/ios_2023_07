@@ -12,10 +12,18 @@ struct ContentView: View {
     @State var large = false
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world! \(rotDegrees)")
+            List {
+                Text("Hello")
+                Text("World")
+                Text("Hello")
+                Text("World")
+                Text("Hello")
+                Text("World")
+                Text("Hello")
+                Text("World")
+                Text("Hello")
+                Text("World")
+            }
             Image(systemName: "arrow.right.circle")
                 .resizable()
                 .aspectRatio(1.0, contentMode: .fit)

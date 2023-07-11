@@ -7,39 +7,35 @@
 
 import SwiftUI
 
+struct TopButton: View {
+    var isLeft: Bool
+    var body: some View {
+        Button {
+        } label: {
+            let name = isLeft ? "arrow.left.circle.fill" : "arrow.right.circle.fill"
+            Image(systemName: name)
+        }
+        .background(Color.yellow)
+        .padding()
+        .background(Color.blue)
+    }
+}
+
+struct TopBotton_Previews: PreviewProvider {
+    static var previews: some View {
+        TopButton(isLeft: true)
+    }
+}
+
 struct ContentView: View {
     @State var page = 1
     var body: some View {
         VStack {
             HStack {
-//                Button(action:{
-//
-//                }, label: {
-//
-//                })
-                Button {
-                    page -= 1
-                } label: {
-                    Image(systemName: "arrow.left.circle.fill")
-                }
-                .background(Color.yellow)
-                .padding()
-                .background(Color.blue)
-                .disabled(page == 1)
-
+                TopButton(isLeft: true)
                 Text("\(page) / 5")
                     .frame(maxWidth: .infinity)
-                Button {
-                    page += 1
-//                    print("Right clicked")
-                } label: {
-                    Image(systemName: "arrow.right.circle.fill")
-                }
-                .background(Color.yellow)
-                .padding()
-                .background(Color.blue)
-                .disabled(page == 1)
-                .disabled(page == 5)
+                TopButton(isLeft: false)
             }
             .font(.largeTitle)
             Image("cat\(page)")

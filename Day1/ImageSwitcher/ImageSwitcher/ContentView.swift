@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TopButton: View {
     var isLeft: Bool
-    var disabled: Bool
+    var enabled: Bool
     var action: ()->Void
     var body: some View {
         Button {
@@ -21,13 +21,13 @@ struct TopButton: View {
         .background(Color.yellow)
         .padding()
         .background(Color.blue)
-        .disabled(disabled)
+        .disabled(!enabled)
     }
 }
 
 struct TopBotton_Previews: PreviewProvider {
     static var previews: some View {
-        TopButton(isLeft: true, disabled: false) {}
+        TopButton(isLeft: true, enabled: false) {}
     }
 }
 
@@ -36,12 +36,12 @@ struct ContentView: View {
     var body: some View {
         VStack {
             HStack {
-                TopButton(isLeft: true, disabled: page == 1) {
+                TopButton(isLeft: true, enabled: page > 1) {
                     page -= 1
                 }
                 Text("\(page) / 5")
                     .frame(maxWidth: .infinity)
-                TopButton(isLeft: false, disabled: page == 5) {
+                TopButton(isLeft: false, enabled: page < 5) {
                     page += 1
                 }
             }

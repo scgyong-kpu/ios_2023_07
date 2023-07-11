@@ -15,15 +15,20 @@ struct ContentView: View {
     ]
 
     var body: some View {
+        NavigationView {
             List {
                 ForEach(names, id: \.self) { row in
-                    HStack {
-                        Image(systemName: "pencil.tip.crop.circle.badge.arrow.forward")
+                    NavigationLink {
                         Text(row)
+                    } label: {
+                        HStack {
+                            Image(systemName: "pencil.tip.crop.circle.badge.arrow.forward")
+                            Text(row)
+                        }
                     }
                 }
             }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        }
         .background(
             LinearGradient(colors: [
                 .white, .cyan, .red

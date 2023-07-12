@@ -36,11 +36,14 @@ struct DragGestureView: View {
                         }
                 )
         }
+        .navigationTitle("Drag")
     }
 }
 
 struct DragGestureView_Previews: PreviewProvider {
     static var previews: some View {
-        DragGestureView()
+        NavigationView {
+            DragGestureView()
+        }
     }
 }

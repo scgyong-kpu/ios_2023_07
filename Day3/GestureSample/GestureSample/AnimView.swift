@@ -15,10 +15,11 @@ struct AnimView: View {
                 .resizable()
                 .frame(width: 200, height: 200)
                 .foregroundColor(.purple)
-                .rotationEffect(.degrees(spinning ? 90 : 0))
+                .rotationEffect(.degrees(spinning ? 360 : 0))
                 .animation(
-                    .linear(duration: 1.0),
-                    value: spinning ? 90 : 0
+                    .linear(duration: 1.0)
+                    .repeatForever(autoreverses: false),
+                    value: spinning ? 360 : 0
                 )
             Toggle(isOn: $spinning) {
                 Text("Spins")

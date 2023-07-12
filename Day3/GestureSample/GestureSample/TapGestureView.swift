@@ -14,22 +14,29 @@ struct TapGestureView: View {
         return "\(count)"
     }
     var body: some View {
-        Text("Tap Me ! \(title)")
-            .font(.largeTitle)
-            .foregroundColor(.blue)
-            .frame(maxWidth: .infinity)
-            .padding()
-            .background(Color.yellow)
-            .onTapGesture {
-                count += 1
-            }
-//            .gesture(
-//                TapGesture()
-//                    .onEnded {
-//                        //print("Tapped")
-//                        count += 1
-//                    }
-//            )
+        VStack {
+            Text("Tap Me ! \(title)")
+                .font(.largeTitle)
+                .foregroundColor(.blue)
+                .frame(maxWidth: .infinity)
+                .padding()
+                .background(Color.yellow)
+                .onTapGesture {
+                    count += 1
+                }
+            Text("LongPress Me!")
+                .font(.largeTitle)
+                .foregroundColor(.blue)
+                .frame(maxWidth: .infinity)
+                .padding()
+                .background(Color.orange)
+                .gesture(
+                    LongPressGesture()
+                        .onEnded { _ in
+                            count += 10
+                        }
+                )
+        }
     }
 }
 

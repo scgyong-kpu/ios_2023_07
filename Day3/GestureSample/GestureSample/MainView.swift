@@ -14,7 +14,7 @@ struct MainView: View {
                 NavigationLink {
                     TapGestureView()
                 } label: {
-                    Text("Tap")
+                    Text("Tap & LongPress")
                 }
             }
             .navigationTitle("Gestures Test")

@@ -16,6 +16,7 @@
 		3D51B0B72A5E750F004E6ED1 /* RotationGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D51B0B62A5E750F004E6ED1 /* RotationGestureView.swift */; };
 		3D51B0B92A5E7D2A004E6ED1 /* ScaleGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D51B0B82A5E7D2A004E6ED1 /* ScaleGestureView.swift */; };
 		3D51B0BB2A5E7FDD004E6ED1 /* ShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D51B0BA2A5E7FDD004E6ED1 /* ShapeView.swift */; };
+		3D51B0BD2A5E8FE9004E6ED1 /* AnimView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D51B0BC2A5E8FE9004E6ED1 /* AnimView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		3D51B0B62A5E750F004E6ED1 /* RotationGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationGestureView.swift; sourceTree = "<group>"; };
 		3D51B0B82A5E7D2A004E6ED1 /* ScaleGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleGestureView.swift; sourceTree = "<group>"; };
 		3D51B0BA2A5E7FDD004E6ED1 /* ShapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeView.swift; sourceTree = "<group>"; };
+		3D51B0BC2A5E8FE9004E6ED1 /* AnimView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				3D51B0B62A5E750F004E6ED1 /* RotationGestureView.swift */,
 				3D51B0B82A5E7D2A004E6ED1 /* ScaleGestureView.swift */,
 				3D51B0BA2A5E7FDD004E6ED1 /* ShapeView.swift */,
+				3D51B0BC2A5E8FE9004E6ED1 /* AnimView.swift */,
 			);
 			path = GestureSample;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D51B0B52A5E6D9B004E6ED1 /* DragGestureView.swift in Sources */,
+				3D51B0BD2A5E8FE9004E6ED1 /* AnimView.swift in Sources */,
 				3D51B0B92A5E7D2A004E6ED1 /* ScaleGestureView.swift in Sources */,
 				3D51B0B72A5E750F004E6ED1 /* RotationGestureView.swift in Sources */,
 				3D51B0A72A5E4D0D004E6ED1 /* MainView.swift in Sources */,

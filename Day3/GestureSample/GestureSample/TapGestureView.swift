@@ -10,6 +10,11 @@ import SwiftUI
 struct TapGestureView: View {
     var body: some View {
         Text("Tap Me !")
+            .font(.largeTitle)
+            .foregroundColor(.blue)
+            .frame(maxWidth: .infinity)
+            .padding()
+            .background(Color.yellow)
     }
 }
 

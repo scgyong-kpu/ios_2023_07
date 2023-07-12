@@ -30,12 +30,9 @@ struct TapGestureView: View {
                 .frame(maxWidth: .infinity)
                 .padding()
                 .background(Color.orange)
-                .gesture(
-                    LongPressGesture()
-                        .onEnded { _ in
-                            count += 10
-                        }
-                )
+                .onLongPressGesture {
+                    count += 10
+                }
         }
     }
 }

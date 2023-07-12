@@ -9,12 +9,17 @@ import SwiftUI
 
 struct AnimView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            
+        }
+        .navigationTitle("Animation")
     }
 }
 
 struct AnimView_Previews: PreviewProvider {
     static var previews: some View {
-        AnimView()
+        NavigationView {
+            AnimView()
+        }
     }
 }

@@ -9,12 +9,17 @@ import SwiftUI
 
 struct RotationGestureView: View {
     var body: some View {
-        Text("Rotation!")
+        VStack {
+            Text("Rotation!")
+        }
+        .navigationTitle("Rotation")
     }
 }
 
 struct RotationGestureView_Previews: PreviewProvider {
     static var previews: some View {
-        RotationGestureView()
+        NavigationView {
+            RotationGestureView()
+        }
     }
 }

@@ -37,15 +37,29 @@ struct ShapeView: View {
                 .frame(width: 100, height: 50)
             Ellipse()
                 .frame(width: 100, height: 50)
-            Path { g in
-                g.move(to: .zero)
-                g.addLine(to: CGPoint(x: 100, y: 200))
-                g.addLine(to: CGPoint(x: 200, y: 100))
-                g.addLine(to: CGPoint(x: 150, y: 50))
-                g.closeSubpath()
+            GeometryReader { gr in
+                Path { g in
+                    let rect = CGRect(origin: .zero, size: gr.size)
+                    g.move(to: CGPoint(x: rect.size.width/2, y: 0))
+                    g.addQuadCurve(
+                        to: CGPoint(x: rect.width/2, y: rect.height),
+                        control: CGPoint(x: rect.width, y: rect.height)
+                    )
+                    g.addQuadCurve(
+                        to: CGPoint(x: rect.size.width/2, y: 0),
+                        control: CGPoint(x: 0, y: rect.height)
+                    )
+                }
+                .fill(
+                    LinearGradient(
+                        gradient: Gradient(
+                            colors: [Color.white, Color.blue]),
+                        startPoint: .topLeading,
+                        endPoint: .bottom
+                    )
+                )
             }
-            .stroke(lineWidth: 5)
-            .fill(.blue)
+            .frame(width: 200)
         }
         .navigationTitle("Shapes")
     }

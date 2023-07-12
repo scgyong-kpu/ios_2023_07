@@ -27,12 +27,19 @@ struct ShapeView: View {
             RoundedRectangle(cornerRadius: 20)
                 .stroke(lineWidth: 10)
                 .frame(height: 50)
-                .padding()
-            Capsule()
-                .stroke(lineWidth: 10)
-                .foregroundColor(.blue)
-                .frame(height: 100)
                 .padding(.horizontal)
+            Capsule()
+                .stroke(lineWidth: 20)
+                .fill(
+                    RadialGradient(
+                        colors: [.yellow, .red],
+                        center: .center,
+                        startRadius: 0,
+                        endRadius: 200
+                    )
+                )
+                .frame(height: 30)
+                .padding()
             Circle()
                 .frame(width: 100, height: 50)
             Ellipse()
@@ -59,7 +66,18 @@ struct ShapeView: View {
                     )
                 )
             }
-            .frame(width: 200)
+            .frame(width: 80, height: 100)
+            Path { g in
+                g.move(to: CGPoint(x: 50, y: 50))
+                g.addLine(to: CGPoint(x: 100, y: 200))
+                g.addLine(to: CGPoint(x: 200, y: 100))
+                g.addLine(to: CGPoint(x: 150, y: 50))
+            }
+            .stroke(style: StrokeStyle(
+                lineWidth: 30,
+                lineCap: .butt,
+                lineJoin: .bevel
+            ))
         }
         .navigationTitle("Shapes")
     }

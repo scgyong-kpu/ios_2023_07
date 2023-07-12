@@ -8,24 +8,28 @@
 import SwiftUI
 
 struct AnimView: View {
-    @State var spinning = false
+    @State var spinning = true
+    @State var angle = Angle.zero
     var body: some View {
         VStack {
             Image(systemName: "arrow.clockwise.circle")
                 .resizable()
                 .frame(width: 200, height: 200)
                 .foregroundColor(.purple)
-                .rotationEffect(.degrees(spinning ? 360 : 0))
+                .rotationEffect(angle)
                 .animation(
                     .linear(duration: 1.0)
                     .repeatForever(autoreverses: false),
-                    value: spinning ? 360 : 0
+                    value: angle
                 )
             Toggle(isOn: $spinning) {
                 Text("Spins")
                     .font(.title)
             }
             .frame(width: 200)
+        }
+        .onAppear {
+            angle = .degrees(360)
         }
         .navigationTitle("Animation")
     }

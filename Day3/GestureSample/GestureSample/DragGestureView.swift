@@ -22,6 +22,9 @@ struct DragGestureView: View {
                             globePosition = value.translation
                             //print("Dragging")
                         }
+                        .onEnded { value in
+                            globePosition = .zero
+                        }
                 )
         }
     }

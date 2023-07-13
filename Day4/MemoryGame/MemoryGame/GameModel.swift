@@ -29,4 +29,9 @@ struct GameModel {
             cards.append(Card(number: n, state: .closed))
         }
     }
+    
+    func card(row: Int, col: Int) -> Card {
+        let index = row * Self.cols + col
+        return cards[index]
+    }
 }

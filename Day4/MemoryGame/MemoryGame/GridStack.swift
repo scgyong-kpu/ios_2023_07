@@ -7,15 +7,16 @@
 
 import SwiftUI
 
-struct GridStack: View {
+struct GridStack<Content: View>: View {
     let cols: Int
     let rows: Int
+    let content: (_ row: Int, _ col: Int) -> Content
     var body: some View {
         VStack {
             ForEach(0 ..< rows, id: \.self) { row in
                 HStack {
                     ForEach(0 ..< cols, id: \.self) { col in
-                        CardView(prefix: "f", number: row+col+1, open: true)
+                        self.content(row, col)
                     }
                 }
             }
@@ -25,6 +26,11 @@ struct GridStack: View {
 
 struct GridStack_Previews: PreviewProvider {
     static var previews: some View {
-        GridStack(cols: 3, rows: 4)
+        GridStack(cols: 4, rows: 6) { row, col in
+            Text("\(row).\(col)")
+                .font(.largeTitle)
+                .padding()
+                .border(Color.red)
+        }
     }
 }

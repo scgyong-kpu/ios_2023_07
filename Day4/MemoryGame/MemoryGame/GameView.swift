@@ -10,12 +10,10 @@ import SwiftUI
 struct GameView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            GridStack(cols: 3, rows: 5) { row, col in
+                CardView(prefix: "f", number: row+col+1, open: true)
+            }
         }
-        .padding()
     }
 }
 

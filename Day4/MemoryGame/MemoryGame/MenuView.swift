@@ -8,18 +8,16 @@
 import SwiftUI
 
 struct MenuView: View {
+    let prefixes = [ "f", "t" ]
     var body: some View {
         NavigationView {
             List {
-                NavigationLink {
-                    GameView(prefix: "f")
-                } label: {
-                    Text("F Game")
-                }
-                NavigationLink {
-                    GameView(prefix: "t")
-                } label: {
-                    Text("T Game")
+                ForEach(prefixes, id: \.self) { prefix in
+                    NavigationLink {
+                        GameView(prefix: prefix)
+                    } label: {
+                        Text("Game")
+                    }
                 }
             }
             .navigationTitle("Memory Game")

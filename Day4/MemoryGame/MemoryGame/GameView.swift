@@ -11,6 +11,8 @@ struct GameView: View {
     let prefix: String
     @ObservedObject var gameModel = GameModel()
     @State var showsRetryAlert = false
+    @Environment(\.presentationMode) var present
+
     var body: some View {
         VStack {
             Spacer()
@@ -34,7 +36,7 @@ struct GameView: View {
             HStack {
                 Spacer()
                 Button {
-                    
+                    present.wrappedValue.dismiss()
                 } label: {
                     Text("Back")
                         .font(.title)

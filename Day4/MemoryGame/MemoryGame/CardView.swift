@@ -26,6 +26,7 @@ struct CardView: View {
                     frameIndex = 1
                 }
             }
+            .opacity(card.state == .removed ? 0 : 1)
     }
     var filename: String {
         if card.state == .closed { return "\(prefix)_back" }

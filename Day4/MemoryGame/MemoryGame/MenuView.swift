@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MenuView: View {
-    let prefixes = [ "f", "t", "z" ]
+    let prefixes = [ "z", "l", "f", "t" ]
     var body: some View {
         NavigationView {
             ScrollView(.vertical) {

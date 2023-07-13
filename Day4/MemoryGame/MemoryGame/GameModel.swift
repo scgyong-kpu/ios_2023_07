@@ -37,7 +37,6 @@ class GameModel: ObservableObject {
     func toggle(row: Int, col: Int) {
         let index = row * Self.cols + col
         var card = cards[index]
-        card.state = card.state == .open ? .closed : .open
-        cards[index] = card
+        cards[index].state = card.state == .open ? .closed : .open
     }
 }

@@ -12,11 +12,16 @@ struct MenuView: View {
         NavigationView {
             List {
                 NavigationLink {
-                    GameView()
+                    GameView(prefix: "f")
                 } label: {
-                    Text("Game")
+                    Text("F Game")
                 }
-            }
+                NavigationLink {
+                    GameView(prefix: "t")
+                } label: {
+                    Text("T Game")
+                }
+           }
         }
     }
 }

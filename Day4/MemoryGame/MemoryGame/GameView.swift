@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct GameView: View {
-    var gameModel = GameModel()
+    @ObservedObject var gameModel = GameModel()
     var body: some View {
         VStack {
             GridStack(cols: GameModel.cols, rows: GameModel.rows) { row, col in
                 CardView(prefix: "f",
                          card: gameModel.card(row: row, col: col)
                 )
+                .onTapGesture {
+                    gameModel.toggle(row: row, col: col)
+                }
             }
         }
     }

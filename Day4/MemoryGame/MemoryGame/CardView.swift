@@ -24,10 +24,13 @@ struct CardView: View {
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            CardView(prefix: "f", card: Card(number: 1, state: .open))
-            CardView(prefix: "f", card: Card(number: 2, state: .open))
-            CardView(prefix: "f", card: Card(number: 3, state: .open))
-            CardView(prefix: "f", card: Card(number: 4, state: .closed))
+            ForEach(1...10, id: \.self) { n in
+                HStack {
+                    CardView(prefix: "f", card: Card(number: n, state: .open))
+                    CardView(prefix: "f", card: Card(number: n, state: .closed))
+                    CardView(prefix: "f", card: Card(number: n, state: .removed))
+               }
+            }
        }
     }
 }

@@ -21,7 +21,8 @@ struct MenuView: View {
                 } label: {
                     Text("T Game")
                 }
-           }
+            }
+            .navigationTitle("Memory Game")
         }
     }
 }

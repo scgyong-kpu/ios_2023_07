@@ -32,6 +32,20 @@ struct GameView: View {
             }
             Spacer()
             HStack {
+                Spacer()
+                Button {
+                    
+                } label: {
+                    Text("Back")
+                        .font(.title)
+                        .padding()
+                        .background(
+                            Capsule()
+                                .stroke(lineWidth: 5)
+                        )
+                        .shadow(color: .gray, radius: 4, x: 3, y: 3)
+                }
+                Spacer()
                 Button {
                     showsRetryAlert = true
                 } label: {
@@ -44,6 +58,7 @@ struct GameView: View {
                         )
                         .shadow(color: .gray, radius: 4, x: 3, y: 3)
                 }
+                Spacer()
             }
             Spacer()
         }
@@ -57,11 +72,14 @@ struct GameView: View {
                 secondaryButton: .cancel()
             )
         }
+        .navigationBarHidden(true)
     }
 }
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        GameView(prefix: "t")
+        NavigationView {
+            GameView(prefix: "t")
+        }
     }
 }

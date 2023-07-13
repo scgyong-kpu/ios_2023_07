@@ -13,6 +13,8 @@ struct CardView: View {
     let open: Bool
     var body: some View {
         Image(filename)
+            .resizable()
+            .aspectRatio(contentMode: .fit)
     }
     var filename: String {
         if !open { return "\(prefix)_back" }

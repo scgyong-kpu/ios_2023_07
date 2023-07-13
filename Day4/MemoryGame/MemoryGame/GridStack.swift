@@ -15,8 +15,7 @@ struct GridStack: View {
             ForEach(0 ..< rows, id: \.self) { row in
                 HStack {
                     ForEach(0 ..< cols, id: \.self) { col in
-                        Image(systemName: "globe")
-                            .font(.largeTitle)
+                        CardView(prefix: "f", number: row+col+1, open: true)
                     }
                 }
             }

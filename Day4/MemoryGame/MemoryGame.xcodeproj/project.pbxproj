@@ -14,6 +14,7 @@
 		3D1610DD2A5F8FFC00F4F59E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1610DC2A5F8FFC00F4F59E /* CardView.swift */; };
 		3D1610DF2A5F94CC00F4F59E /* GridStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1610DE2A5F94CC00F4F59E /* GridStack.swift */; };
 		3D1610E12A5F995D00F4F59E /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1610E02A5F995D00F4F59E /* GameModel.swift */; };
+		3D1610E32A5FC93200F4F59E /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1610E22A5FC93200F4F59E /* MenuView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		3D1610DC2A5F8FFC00F4F59E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		3D1610DE2A5F94CC00F4F59E /* GridStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridStack.swift; sourceTree = "<group>"; };
 		3D1610E02A5F995D00F4F59E /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		3D1610E22A5FC93200F4F59E /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				3D1610DC2A5F8FFC00F4F59E /* CardView.swift */,
 				3D1610DE2A5F94CC00F4F59E /* GridStack.swift */,
 				3D1610E02A5F995D00F4F59E /* GameModel.swift */,
+				3D1610E22A5FC93200F4F59E /* MenuView.swift */,
 			);
 			path = MemoryGame;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D1610E12A5F995D00F4F59E /* GameModel.swift in Sources */,
+				3D1610E32A5FC93200F4F59E /* MenuView.swift in Sources */,
 				3D1610D12A5F8D9200F4F59E /* GameView.swift in Sources */,
 				3D1610DD2A5F8FFC00F4F59E /* CardView.swift in Sources */,
 				3D1610DF2A5F94CC00F4F59E /* GridStack.swift in Sources */,

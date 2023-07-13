@@ -44,7 +44,7 @@ class GameModel: ObservableObject {
             cards.append(Card(number: n, state: .closed))
             cards.append(Card(number: n, state: .closed))
         }
-        //cards.shuffle()
+        cards.shuffle()
         openCardIndex = nil
         flips = 0
         pairCount = max

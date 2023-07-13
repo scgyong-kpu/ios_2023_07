@@ -23,6 +23,16 @@ class GameModel: ObservableObject {
     var openCardIndex: Int?
     @Published var flips = 0
     
+    var over: Bool {
+//        for c in cards {
+//            if c.state != .removed { return false }
+//        }
+//        return true
+        return pairCount == 0
+    }
+
+    private var pairCount = 0
+    
     init() {
         start()
     }
@@ -37,6 +47,7 @@ class GameModel: ObservableObject {
         cards.shuffle()
         openCardIndex = nil
         flips = 0
+        pairCount = max
     }
     
     func card(row: Int, col: Int) -> Card {
@@ -53,6 +64,7 @@ class GameModel: ObservableObject {
                 cards[oci].state = .removed
                 cards[index].state = .removed
                 openCardIndex = nil
+                pairCount -= 1
                 return
             }
             cards[oci].state = .closed

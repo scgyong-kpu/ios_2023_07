@@ -10,18 +10,23 @@ import SwiftUI
 struct CardView: View {
     let prefix: String
     let number: Int
+    let open: Bool
     var body: some View {
-        Image("\(prefix)_\(String(format: "%02d", number))_01")
+        Image(filename)
+    }
+    var filename: String {
+        if !open { return "\(prefix)_back" }
+        return String(format: "\(prefix)_%02d_%02d", number, 1)
     }
 }
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            CardView(prefix: "f", number: 1)
-            CardView(prefix: "f", number: 2)
-            CardView(prefix: "f", number: 3)
-            CardView(prefix: "f", number: 4)
+            CardView(prefix: "f", number: 1, open: true)
+            CardView(prefix: "f", number: 2, open: false)
+            CardView(prefix: "f", number: 3, open: true)
+            CardView(prefix: "f", number: 4, open: false)
        }
     }
 }

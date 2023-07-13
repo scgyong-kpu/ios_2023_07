@@ -21,6 +21,7 @@ class GameModel: ObservableObject {
     
     @Published var cards = [Card]()
     var openCardIndex: Int?
+    @Published var flips = 0
     
     init() {
         start()
@@ -34,6 +35,7 @@ class GameModel: ObservableObject {
             cards.append(Card(number: n, state: .closed))
         }
         openCardIndex = nil
+        flips = 0
     }
     
     func card(row: Int, col: Int) -> Card {
@@ -59,5 +61,7 @@ class GameModel: ObservableObject {
         cards[index].state = card.state == .open ? .closed : .open
         
         openCardIndex = index
+        
+        flips += 1
     }
 }

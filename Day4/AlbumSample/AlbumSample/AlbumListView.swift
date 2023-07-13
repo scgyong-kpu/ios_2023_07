@@ -11,12 +11,12 @@ struct AlbumListView: View {
     @ObservedObject var albumStore = AlbumStore.get()
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            List {
+                ForEach(albumStore.albums, id: \.albumTitle) { album in
+                    Text(album.albumTitle)
+                }
+            }
         }
-        .padding()
         .onAppear {
             albumStore.load()
         }

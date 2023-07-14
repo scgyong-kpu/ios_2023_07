@@ -13,7 +13,7 @@ struct PoiListView: View {
         NavigationView {
             List {
                 ForEach(poiData.items, id: \.RESTRT_NM) { item in
-                    Text(item.RESTRT_NM)
+                    PoiItemView(item: item)
                 }
             }
         }
@@ -26,5 +26,12 @@ struct PoiListView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         PoiListView()
+    }
+}
+
+struct PoiItemView: View {
+    let item: PoiItem
+    var body: some View {
+        Text(item.RESTRT_NM)
     }
 }

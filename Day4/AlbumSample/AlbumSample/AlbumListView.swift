@@ -18,6 +18,21 @@ struct AlbumListView: View {
                     }
                 }
             }
+            .overlay(
+                ZStack {
+                    Color.gray.opacity(0.75)
+                        .frame(width: 150, height: 150)
+                        .cornerRadius(30)
+                    VStack {
+                        ProgressView()
+                            .controlSize(.large)
+                            .padding()
+                        Text("Loading...")
+                            .foregroundColor(.white)
+                    }
+                }
+                .opacity(albumStore.albums.isEmpty ? 1 : 0)
+            )
             .navigationTitle("Albums")
         }
         .onAppear {

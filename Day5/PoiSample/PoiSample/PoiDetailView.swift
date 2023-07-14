@@ -17,12 +17,16 @@ struct PoiDetailView: View {
             Text(item.TASTFDPLC_TELNO)
             Text(item.REFINE_ROADNM_ADDR)
         }
+        .navigationTitle(item.RESTRT_NM)
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
 struct PoiDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        PoiDetailView(item: load())
+        NavigationView {
+            PoiDetailView(item: load())
+        }
     }
     static func load() -> PoiItem {
         return try! JSONDecoder().decode(

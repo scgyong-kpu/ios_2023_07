@@ -13,9 +13,14 @@ struct PoiListView: View {
         NavigationView {
             List {
                 ForEach(poiData.items, id: \.RESTRT_NM) { item in
-                    PoiItemView(item: item)
+                    NavigationLink {
+                        PoiDetailView(item: item)
+                    } label: {
+                        PoiItemView(item: item)
+                    }
                 }
             }
+            .navigationTitle("Restaurants")
         }
         .onAppear {
             poiData.startLoading()

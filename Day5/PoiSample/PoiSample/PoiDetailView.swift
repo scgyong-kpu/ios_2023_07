@@ -11,11 +11,12 @@ import MapKit
 struct PoiDetailView: View {
     let item: PoiItem
     @State var region: MKCoordinateRegion
+    let center: CLLocationCoordinate2D
     init(item: PoiItem) {
         self.item = item
         let lat = CLLocationDegrees(item.REFINE_WGS84_LAT) ?? 0
         let lng = CLLocationDegrees(item.REFINE_WGS84_LOGT) ?? 0
-        let center = CLLocationCoordinate2D(latitude: lat, longitude: lng)
+        center = CLLocationCoordinate2D(latitude: lat, longitude: lng)
         let span = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
         self.region = MKCoordinateRegion(center: center, span: span)
     }
@@ -37,13 +38,27 @@ struct PoiDetailView: View {
                 PropertyView(img: "phone.circle") {
                     Text(item.TASTFDPLC_TELNO)
                 }
-                Map(coordinateRegion: $region)
-                    .frame(maxWidth: .infinity)
-                    .aspectRatio(contentMode: .fit)
+                Map(coordinateRegion: $region, annotationItems:[item]) { item in
+                    MapMarker(
+                        coordinate: item.location,
+                        tint: .blue
+                    )
+                }
+                .frame(maxWidth: .infinity)
+                .aspectRatio(contentMode: .fit)
             }
         }
         .navigationTitle(item.RESTRT_NM)
         .navigationBarTitleDisplayMode(.inline)
+    }
+}
+
+extension PoiItem: Identifiable {
+    var id: String { RESTRT_NM }
+    var location: CLLocationCoordinate2D {
+        let lat = CLLocationDegrees(self.REFINE_WGS84_LAT) ?? 0
+        let lng = CLLocationDegrees(self.REFINE_WGS84_LOGT) ?? 0
+        return CLLocationCoordinate2D(latitude: lat, longitude: lng)
     }
 }
 

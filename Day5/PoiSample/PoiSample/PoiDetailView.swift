@@ -10,12 +10,27 @@ import SwiftUI
 struct PoiDetailView: View {
     let item: PoiItem
     var body: some View {
-        VStack(alignment: .leading) {
-            Text(item.RESTRT_NM)
-            Text(item.REPRSNT_FOOD_NM)
-            Text(item.SIGUN_NM)
-            Text(item.TASTFDPLC_TELNO)
-            Text(item.REFINE_ROADNM_ADDR)
+        ScrollView(.vertical) {
+            VStack(alignment: .leading) {
+                HStack {
+                    Image(systemName: "tram.circle")
+                        .resizable()
+                        .frame(width: 32, height: 32)
+                    Text(item.SIGUN_NM)
+                }
+                HStack {
+                    Image(systemName: "house.circle")
+                        .resizable()
+                        .frame(width: 32, height: 32)
+                    Text(item.REFINE_ROADNM_ADDR)
+                }
+                HStack {
+                    Image(systemName: "phone.circle")
+                        .resizable()
+                        .frame(width: 32, height: 32)
+                    Text(item.TASTFDPLC_TELNO)
+                }
+            }
         }
         .navigationTitle(item.RESTRT_NM)
         .navigationBarTitleDisplayMode(.inline)

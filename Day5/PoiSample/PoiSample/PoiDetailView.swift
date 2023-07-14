@@ -12,28 +12,38 @@ struct PoiDetailView: View {
     var body: some View {
         ScrollView(.vertical) {
             VStack(alignment: .leading) {
-                HStack {
-                    Image(systemName: "tram.circle")
-                        .resizable()
-                        .frame(width: 32, height: 32)
+                PropertyView(img: "tram.circle") {
                     Text(item.SIGUN_NM)
                 }
-                HStack {
-                    Image(systemName: "house.circle")
-                        .resizable()
-                        .frame(width: 32, height: 32)
+                PropertyView(img: "location.circle") {
+                    Text(item.SIGUN_CD)
+                }
+                PropertyView(img: "fork.knife.circle") {
+                    Text(item.REPRSNT_FOOD_NM)
+                }
+               PropertyView(img: "house.circle") {
                     Text(item.REFINE_ROADNM_ADDR)
                 }
-                HStack {
-                    Image(systemName: "phone.circle")
-                        .resizable()
-                        .frame(width: 32, height: 32)
+                PropertyView(img: "phone.circle") {
                     Text(item.TASTFDPLC_TELNO)
                 }
             }
         }
         .navigationTitle(item.RESTRT_NM)
         .navigationBarTitleDisplayMode(.inline)
+    }
+}
+
+struct PropertyView<Content: View>: View {
+    let img: String
+    let content: ()->Content
+    var body: some View {
+        HStack {
+            Image(systemName: img)
+                .resizable()
+                .frame(width: 32, height: 32)
+            content()
+        }
     }
 }
 

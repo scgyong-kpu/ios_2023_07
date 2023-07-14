@@ -21,7 +21,7 @@ struct AlbumListView: View {
             .navigationTitle("Albums")
         }
         .onAppear {
-            albumStore.load()
+            albumStore.loadRemote()
         }
     }
 }

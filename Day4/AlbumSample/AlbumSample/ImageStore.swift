@@ -22,6 +22,7 @@ class ImageStore {
             guard let uiImg = UIImage(data: data) else { return }
             let img = Image(uiImage: uiImg)
             OperationQueue.main.addOperation {
+                print("Download done : \(urlString)")
                 cache[urlString] = img
                 callback(img)
             }

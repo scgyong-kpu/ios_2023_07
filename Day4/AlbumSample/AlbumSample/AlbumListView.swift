@@ -13,7 +13,7 @@ struct AlbumListView: View {
         VStack {
             List {
                 ForEach(albumStore.albums, id: \.albumTitle) { album in
-                    Text(album.albumTitle)
+                    AlbumItemView(album: album)
                 }
             }
         }
@@ -26,5 +26,12 @@ struct AlbumListView: View {
 struct AlbumListView_Previews: PreviewProvider {
     static var previews: some View {
         AlbumListView()
+    }
+}
+
+struct AlbumItemView: View {
+    let album: Album
+    var body: some View {
+        Text(album.albumTitle)
     }
 }

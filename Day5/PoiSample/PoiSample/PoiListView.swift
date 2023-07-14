@@ -8,17 +8,18 @@
 import SwiftUI
 
 struct PoiListView: View {
+    @ObservedObject var poiData = PoiDataStore.get()
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationView {
+            List {
+                ForEach(poiData.items, id: \.RESTRT_NM) { item in
+                    Text(item.RESTRT_NM)
+                }
+            }
         }
         .onAppear {
-            PoiDataStore.get().startLoading()
+            poiData.startLoading()
         }
-        .padding()
     }
 }
 

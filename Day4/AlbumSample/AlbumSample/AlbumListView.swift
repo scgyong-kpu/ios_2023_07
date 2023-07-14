@@ -12,7 +12,6 @@ struct AlbumListView: View {
     var body: some View {
         NavigationView {
             VStack {
-                albumImage()
                 List {
                     ForEach(albumStore.albums, id: \.albumTitle) { album in
                         AlbumItemView(album: album)
@@ -22,17 +21,8 @@ struct AlbumListView: View {
             .navigationTitle("Albums")
         }
         .onAppear {
-            //albumStore.load()
+            albumStore.load()
         }
-    }
-    @State var image: Image?
-    func albumImage() -> Image {
-        if image != nil { return image! }
-        let s = "http://scgyong.net/thumbs/slow.php/204_192502.jpg"
-        ImageStore.load(urlString: s) { img in
-            image = img
-        }
-        return Image(systemName: "music.note.list")
     }
 }
 
@@ -46,7 +36,7 @@ struct AlbumItemView: View {
     let album: Album
     var body: some View {
         HStack {
-            Image(systemName: "music.note.list")
+            albumImage()
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 64)
@@ -61,5 +51,13 @@ struct AlbumItemView: View {
                     .padding(.top, 4)
             }
         }
+    }
+    @State var image: Image?
+    func albumImage() -> Image {
+        if image != nil { return image! }
+        ImageStore.load(urlString: album.image) { img in
+            image = img
+        }
+        return Image(systemName: "music.note.list")
     }
 }

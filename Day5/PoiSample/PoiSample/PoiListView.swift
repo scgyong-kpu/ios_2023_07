@@ -32,6 +32,28 @@ struct ContentView_Previews: PreviewProvider {
 struct PoiItemView: View {
     let item: PoiItem
     var body: some View {
-        Text(item.RESTRT_NM)
+        HStack {
+            Image(systemName: "fork.knife.circle")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 64)
+                .foregroundStyle(
+                    .linearGradient(
+                        Gradient(colors: [.yellow, .purple]),
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    )
+                )
+            VStack(alignment: .leading) {
+                Text(item.RESTRT_NM)
+                    .font(.title)
+                    .foregroundColor(.blue)
+                Text(item.REPRSNT_FOOD_NM)
+                Text(item.REFINE_ROADNM_ADDR)
+                    .font(.footnote)
+                    .lineLimit(1)
+                    .foregroundColor(.gray)
+           }
+        }
     }
 }

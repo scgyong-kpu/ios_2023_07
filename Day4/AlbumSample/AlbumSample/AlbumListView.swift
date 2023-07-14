@@ -44,10 +44,10 @@ struct AlbumItemView: View {
                 Text(album.albumTitle)
                     .font(.headline)
                     .lineLimit(2)
-                    .foregroundColor(.blue)
+                    .foregroundColor(Color("albumTitleColor"))
                 Text(album.artistName)
                     .font(.footnote)
-                    .foregroundColor(.green)
+                    .foregroundColor(Color("artistNameColor"))
                     .padding(.top, 4)
             }
         }

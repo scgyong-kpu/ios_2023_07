@@ -13,6 +13,7 @@
 		3D1610F82A5FE1C200F4F59E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D1610F72A5FE1C200F4F59E /* Preview Assets.xcassets */; };
 		3D1611022A5FE53000F4F59E /* AlbumStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1611012A5FE53000F4F59E /* AlbumStore.swift */; };
 		3D1611042A5FED2400F4F59E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3D1611032A5FED2300F4F59E /* res */; };
+		3D73722E2A60E8D5003C1B9C /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D73722D2A60E8D5003C1B9C /* ImageStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,8 @@
 		3D1610F72A5FE1C200F4F59E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3D1611012A5FE53000F4F59E /* AlbumStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumStore.swift; sourceTree = "<group>"; };
 		3D1611032A5FED2300F4F59E /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
+		3D73722D2A60E8D5003C1B9C /* ImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
+		3D73722F2A60EEF2003C1B9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,12 +58,14 @@
 		3D1610EF2A5FE1C000F4F59E /* AlbumSample */ = {
 			isa = PBXGroup;
 			children = (
+				3D73722F2A60EEF2003C1B9C /* Info.plist */,
 				3D1610F02A5FE1C000F4F59E /* AlbumSampleApp.swift */,
 				3D1610F22A5FE1C000F4F59E /* AlbumListView.swift */,
 				3D1610F42A5FE1C200F4F59E /* Assets.xcassets */,
 				3D1610F62A5FE1C200F4F59E /* Preview Content */,
 				3D1611012A5FE53000F4F59E /* AlbumStore.swift */,
 				3D1611032A5FED2300F4F59E /* res */,
+				3D73722D2A60E8D5003C1B9C /* ImageStore.swift */,
 			);
 			path = AlbumSample;
 			sourceTree = "<group>";
@@ -147,6 +152,7 @@
 				3D1610F32A5FE1C000F4F59E /* AlbumListView.swift in Sources */,
 				3D1610F12A5FE1C000F4F59E /* AlbumSampleApp.swift in Sources */,
 				3D1611022A5FE53000F4F59E /* AlbumStore.swift in Sources */,
+				3D73722E2A60E8D5003C1B9C /* ImageStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +284,7 @@
 				DEVELOPMENT_TEAM = 4NYNKSRA5Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AlbumSample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -307,6 +314,7 @@
 				DEVELOPMENT_TEAM = 4NYNKSRA5Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AlbumSample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

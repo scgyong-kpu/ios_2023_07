@@ -15,6 +15,9 @@ struct ContentView: View {
                 .foregroundColor(.accentColor)
             Text("Hello, world!")
         }
+        .onAppear {
+            PoiDataStore.get().startLoading()
+        }
         .padding()
     }
 }

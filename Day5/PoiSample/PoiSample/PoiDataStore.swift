@@ -21,9 +21,39 @@ class PoiItem: Codable {
 }
 
 class PoiDataStore: ObservableObject {
+    public static func get() -> PoiDataStore { singleton }
+    @Published var items = [PoiItem]()
+    
+    private static let singleton = PoiDataStore()
+    private init() {}
     struct Const {
         static let baseUrl = "https://openapi.gg.go.kr/PlaceThatDoATasteyFoodSt"
         static let key = "e92ec3e6a9f44981974d4746d28f8995"
     }
 
+    func startLoading() {
+        let strUrl = "\(Const.baseUrl)?Type=json&Key=\(Const.key)"
+        NSLog("Loading: \(strUrl)")
+        guard let url = URL(string: strUrl) else {
+            print("Failed to build url")
+            return
+        }
+        URLSession.shared.dataTask(with: url) { data, _, _ in
+            guard let data = data else {
+                print("No data from task")
+                return
+            }
+            guard let pois = self.parse(data: data) else {
+                print("Parse failed")
+                return
+            }
+            OperationQueue.main.addOperation {
+                print("Successfully loaded \(pois.count) items")
+                self.items = pois
+            }
+        }.resume()
+    }
+    func parse(data: Data) -> [PoiItem]? {
+        return nil
+    }
 }

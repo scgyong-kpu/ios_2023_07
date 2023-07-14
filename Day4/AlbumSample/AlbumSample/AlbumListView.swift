@@ -10,12 +10,15 @@ import SwiftUI
 struct AlbumListView: View {
     @ObservedObject var albumStore = AlbumStore.get()
     var body: some View {
-        VStack {
-            List {
-                ForEach(albumStore.albums, id: \.albumTitle) { album in
-                    AlbumItemView(album: album)
+        NavigationView {
+            VStack {
+                List {
+                    ForEach(albumStore.albums, id: \.albumTitle) { album in
+                        AlbumItemView(album: album)
+                    }
                 }
             }
+            .navigationTitle("Albums")
         }
         .onAppear {
             albumStore.load()
@@ -32,6 +35,12 @@ struct AlbumListView_Previews: PreviewProvider {
 struct AlbumItemView: View {
     let album: Album
     var body: some View {
-        Text(album.albumTitle)
+        HStack {
+            Image(systemName: "music.note.list")
+            VStack {
+                Text(album.albumTitle)
+                Text(album.artistName)
+            }
+        }
     }
 }

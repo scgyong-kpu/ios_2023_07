@@ -11,7 +11,7 @@ import SwiftUI
 struct PoiSampleApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            PoiListView()
         }
     }
 }

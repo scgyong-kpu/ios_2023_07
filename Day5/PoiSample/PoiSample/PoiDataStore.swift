@@ -69,6 +69,7 @@ class PoiDataStore: ObservableObject {
         var pois = [PoiItem]()
         for item in items {
             guard let poi = PoiItem.from(dictionary: item) else {
+                print(item)
                 continue
             }
             pois.append(poi)

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3D15BB0F2A610ED8009B5332 /* PoiSampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D15BB0E2A610ED8009B5332 /* PoiSampleApp.swift */; };
-		3D15BB112A610ED8009B5332 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D15BB102A610ED8009B5332 /* ContentView.swift */; };
+		3D15BB112A610ED8009B5332 /* PoiListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D15BB102A610ED8009B5332 /* PoiListView.swift */; };
 		3D15BB132A610EDA009B5332 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D15BB122A610EDA009B5332 /* Assets.xcassets */; };
 		3D15BB162A610EDA009B5332 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D15BB152A610EDA009B5332 /* Preview Assets.xcassets */; };
 		3D15BB1D2A610F37009B5332 /* PoiDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D15BB1C2A610F37009B5332 /* PoiDataStore.swift */; };
@@ -17,7 +17,7 @@
 /* Begin PBXFileReference section */
 		3D15BB0B2A610ED8009B5332 /* PoiSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PoiSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D15BB0E2A610ED8009B5332 /* PoiSampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoiSampleApp.swift; sourceTree = "<group>"; };
-		3D15BB102A610ED8009B5332 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3D15BB102A610ED8009B5332 /* PoiListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoiListView.swift; sourceTree = "<group>"; };
 		3D15BB122A610EDA009B5332 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D15BB152A610EDA009B5332 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3D15BB1C2A610F37009B5332 /* PoiDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoiDataStore.swift; sourceTree = "<group>"; };
@@ -54,7 +54,7 @@
 			isa = PBXGroup;
 			children = (
 				3D15BB0E2A610ED8009B5332 /* PoiSampleApp.swift */,
-				3D15BB102A610ED8009B5332 /* ContentView.swift */,
+				3D15BB102A610ED8009B5332 /* PoiListView.swift */,
 				3D15BB122A610EDA009B5332 /* Assets.xcassets */,
 				3D15BB142A610EDA009B5332 /* Preview Content */,
 				3D15BB1C2A610F37009B5332 /* PoiDataStore.swift */,
@@ -141,7 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D15BB1D2A610F37009B5332 /* PoiDataStore.swift in Sources */,
-				3D15BB112A610ED8009B5332 /* ContentView.swift in Sources */,
+				3D15BB112A610ED8009B5332 /* PoiListView.swift in Sources */,
 				3D15BB0F2A610ED8009B5332 /* PoiSampleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

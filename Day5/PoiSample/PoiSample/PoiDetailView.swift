@@ -6,9 +6,19 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct PoiDetailView: View {
     let item: PoiItem
+    @State var region: MKCoordinateRegion
+    init(item: PoiItem) {
+        self.item = item
+        let lat = CLLocationDegrees(item.REFINE_WGS84_LAT) ?? 0
+        let lng = CLLocationDegrees(item.REFINE_WGS84_LOGT) ?? 0
+        let center = CLLocationCoordinate2D(latitude: lat, longitude: lng)
+        let span = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
+        self.region = MKCoordinateRegion(center: center, span: span)
+    }
     var body: some View {
         ScrollView(.vertical) {
             VStack(alignment: .leading) {
@@ -21,12 +31,15 @@ struct PoiDetailView: View {
                 PropertyView(img: "fork.knife.circle") {
                     Text(item.REPRSNT_FOOD_NM)
                 }
-               PropertyView(img: "house.circle") {
+                PropertyView(img: "house.circle") {
                     Text(item.REFINE_ROADNM_ADDR)
                 }
                 PropertyView(img: "phone.circle") {
                     Text(item.TASTFDPLC_TELNO)
                 }
+                Map(coordinateRegion: $region)
+                    .frame(maxWidth: .infinity)
+                    .aspectRatio(contentMode: .fit)
             }
         }
         .navigationTitle(item.RESTRT_NM)

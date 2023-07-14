@@ -8,15 +8,24 @@
 import SwiftUI
 
 class ImageStore {
+    private static var cache = [String: Image]()
+    
     static func load(urlString: String, callback: @escaping (Image)->Void) {
-        OperationQueue().addOperation {
-            guard let url = URL(string: urlString) else { return }
-            guard let data = try? Data(contentsOf: url) else { return }
+        if let img = cache[urlString] {
+            callback(img)
+            return
+        }
+        guard let url = URL(string: urlString) else { return }
+        print("Download starts: \(urlString)")
+        let task = URLSession.shared.dataTask(with: url) { data, resp, err in
+            guard let data = data else { return }
             guard let uiImg = UIImage(data: data) else { return }
             let img = Image(uiImage: uiImg)
             OperationQueue.main.addOperation {
+                cache[urlString] = img
                 callback(img)
             }
         }
+        task.resume()
     }
 }
